@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Список сотрудников</h2>
+    {% for w in workers %}
+        <div>
+            <a href="{% url 'worker-detail' w.pk %}">{{ w.name }}</a>
+        </div>
+    {% empty %}
+        <div>Записей пока нет</div>
+    {% endfor %}
+
+{% endblock %}

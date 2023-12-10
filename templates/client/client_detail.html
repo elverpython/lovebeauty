@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Клиент: {{ client_object.name }}</h1>
+    <div>Описание: {{ client_object.description|default_if_none:"Не указано" }}</div>
+    <div>Адрес: {{ client_object.contacts }}</div>
+    <div>Контакты: {{ client_object.contacts }}</div>
+    <div>Ответственный сотрудник: {{ worker_object.workers }}</div>
+    <div>Брэнд: {{ brand_object.brands }}</div>
+
+    <h2>Редактировать информацию о брэнде</h2>
+        <div><a href="{% url 'client-edit' client_object.pk %}">{{ client_object.name }}</a></div>
+
+{% endblock %}

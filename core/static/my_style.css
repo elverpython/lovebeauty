@@ -13,11 +13,11 @@ h1 {
             center / cover;
     padding: 10px;
     height: 80vh;
-    color: white;
+    color: blue;
 }
 
 .homepage h1 {
-    color: #eee;
+    color: green;
 }
 
 .my-input {
