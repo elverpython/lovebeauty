@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Сотрудник {{ worker_object.name }}</h1>
+    <div>Специализация: {{ worker_object.specialization|default_if_none:"Не указано" }}</div>
+    <div>Заработная плата: {{ worker_object.salary }}</div>
+    <div>Работает в данное время: {{ worker_object.is_working }}</div>
+
+    <h2>Редактировать информацию о сотруднике</h2>
+        <div><a href="{% url 'worker-edit' worker_object.pk %}">{{ worker_object.name }}</a></div>
+
+{% endblock %}

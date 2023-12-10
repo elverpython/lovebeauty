@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Список клиентов</h2>
+    {% for c in clients %}
+        <div>
+            <a href="{% url 'client-detail' c.pk %}">{{ c.name }}</a>
+        </div>
+    {% empty %}
+        <div>Записей пока нет</div>
+    {% endfor %}
+
+{% endblock %}

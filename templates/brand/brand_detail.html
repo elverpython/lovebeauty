@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Брэнд: {{ brand_object.name }}</h1>
+    <div>Описание: {{ brand_object.description|default_if_none:"Не указано" }}</div>
+    <div>Контакты: {{ brand_object.contacts }}</div>
+    <div>Ответственный сотрудник: {{ worker_object.workers }}</div>
+
+    <h2>Редактировать информацию о брэнде</h2>
+        <div><a href="{% url 'brand-edit' brand_object.pk %}">{{ brand_object.name }}</a></div>
+
+{% endblock %}
